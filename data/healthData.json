@@ -1,0 +1,324 @@
+{
+  "_meta": {
+    "category": "health",
+    "version": "1.0.0",
+    "description": "Astrological health readings based on Moon Sign (Rashi) and Ascendant (Lagna)",
+    "totalCombinations": 144,
+    "availableCombinations": 12,
+    "source": "Kundli App - Arogya Jatak",
+    "lastUpdated": "2026-03-19"
+  },
+
+  "rashiMap": {
+    "en": {
+      "aries":       { "index": 1, "name": "Aries" },
+      "taurus":      { "index": 2, "name": "Taurus" },
+      "gemini":      { "index": 3, "name": "Gemini" },
+      "cancer":      { "index": 4, "name": "Cancer" },
+      "leo":         { "index": 5, "name": "Leo" },
+      "virgo":       { "index": 6, "name": "Virgo" },
+      "libra":       { "index": 7, "name": "Libra" },
+      "scorpio":     { "index": 8, "name": "Scorpio" },
+      "sagittarius": { "index": 9, "name": "Sagittarius" },
+      "capricorn":   { "index": 10, "name": "Capricorn" },
+      "aquarius":    { "index": 11, "name": "Aquarius" },
+      "pisces":      { "index": 12, "name": "Pisces" }
+    },
+    "mr": {
+      "मेष":    { "index": 1,  "name": "मेष" },
+      "वृषभ":   { "index": 2,  "name": "वृषभ" },
+      "मिथुन":  { "index": 3,  "name": "मिथुन" },
+      "कर्क":   { "index": 4,  "name": "कर्क" },
+      "सिंह":   { "index": 5,  "name": "सिंह" },
+      "कन्या":  { "index": 6,  "name": "कन्या" },
+      "तुळ":    { "index": 7,  "name": "तुळ" },
+      "वृश्चिक":{ "index": 8,  "name": "वृश्चिक" },
+      "धनु":    { "index": 9,  "name": "धनु" },
+      "मकर":    { "index": 10, "name": "मकर" },
+      "कुंभ":   { "index": 11, "name": "कुंभ" },
+      "मीन":    { "index": 12, "name": "मीन" }
+    },
+    "hi": {
+      "मेष":    { "index": 1,  "name": "मेष" },
+      "वृषभ":   { "index": 2,  "name": "वृषभ" },
+      "मिथुन":  { "index": 3,  "name": "मिथुन" },
+      "कर्क":   { "index": 4,  "name": "कर्क" },
+      "सिंह":   { "index": 5,  "name": "सिंह" },
+      "कन्या":  { "index": 6,  "name": "कन्या" },
+      "तुला":   { "index": 7,  "name": "तुला" },
+      "वृश्चिक":{ "index": 8,  "name": "वृश्चिक" },
+      "धनु":    { "index": 9,  "name": "धनु" },
+      "मकर":    { "index": 10, "name": "मकर" },
+      "कुंभ":   { "index": 11, "name": "कुंभ" },
+      "मीन":    { "index": 12, "name": "मीन" }
+    }
+  },
+
+  "health": {
+
+    "1_1": {
+      "code": "H.1.01",
+      "rashi": { "en": "Aries", "mr": "मेष", "hi": "मेष" },
+      "lagna": { "en": "Aries", "mr": "मेष", "hi": "मेष" },
+      "content": {
+        "mr": "आपल्या जन्म कुंडलीचा विचार करता, डोके, तोंड, मेंदू, कवटी व तोंडाची हाडे यावर चंद्र राशी व लग्न राशीचा अंमल आहे. आपली प्रकृती उष्ण असते. स्वभावात रागीटपणा व थोडा उतावळेपणा असतो. घाई गडबडीची सवय असते. आपणास सल्ला देणेत येतो कि, आपले डोके नेहमी शांत ठेवावे. मानसिक क्षोभाची कोणतीही गोष्ट करू नये. जीवनामध्ये आपणास मेंदूपासून होणारे विकार, मस्तकशूळ, अर्धशिशी, निद्रानाश असे आजार होऊ शकतात. कुंडलीतील षष्ठ स्थान, त्यातील ग्रह, शनी व मंगळाचे प्रथम व षष्ठ स्थानाशी झालेले योग, ग्रहांच्या महादशा-अंतर्दशा व ग्रहांचे गोचर भ्रमण विचारात घेऊन कोणता आजार कधी होईल हे सांगता येते.",
+        "hi": "आपकी जन्म कुंडली के अनुसार, सिर, मुंह, मस्तिष्क, खोपड़ी और मुंह की हड्डियों पर चंद्र राशि और लग्न राशि का प्रभाव रहता है। आपकी प्रकृति उष्ण होती है। स्वभाव में क्रोध और कुछ जल्दबाजी रहती है। जल्दबाजी की आदत होती है। सलाह दी जाती है कि अपना दिमाग हमेशा शांत रखें। मानसिक उद्वेग से बचें। जीवन में मस्तिष्क से होने वाले विकार, सिरदर्द, माइग्रेन, अनिद्रा जैसी बीमारियाँ हो सकती हैं। कुंडली के षष्ठ भाव, उसमें स्थित ग्रह, शनि और मंगल के योग, ग्रहों की महादशा-अंतर्दशा और गोचर भ्रमण से रोग का समय जाना जा सकता है।",
+        "en": "Based on your birth chart, the Moon sign and Ascendant exert influence over the head, face, brain, skull, and facial bones. Your constitution tends to be hot-natured. You may have a tendency toward anger and some impulsiveness. It is advised to keep your mind calm at all times and avoid any mentally disturbing situations. During your lifetime, you may be prone to brain-related disorders, headaches, migraines, and insomnia. The timing and severity of illnesses can be determined by analyzing the 6th house, its planets, Saturn and Mars conjunctions, the Mahadasha-Antardasha periods, and planetary transits."
+      }
+    },
+
+    "1_2": {
+      "code": "H.1.02",
+      "rashi": { "en": "Aries", "mr": "मेष", "hi": "मेष" },
+      "lagna": { "en": "Taurus", "mr": "वृषभ", "hi": "वृषभ" },
+      "content": {
+        "mr": "आपल्या कुंडलीचा विचार करता, डोके, तोंड, मेंदू, मान, मानेची हाडे, गळा, अन्ननलिका, श्वासनलिका, तोंडाची हाडे यावर चंद्र राशी व लग्न राशीचा अंमल आहे. आपली प्रकृती उष्ण असते. स्वभावात रागीटपणा व थोडा उतावळेपणा असतो. आपल्यामध्ये जीवनशक्ती भरपूर असते. हृदय व गळा हे दोन भाग दुर्बल असतात. तेलकट तळलेले, spicy पदार्थ, मेद वाढविणारे पदार्थ कमी प्रमाणात खावेत. जीवनामध्ये आपणास गळा, हृदय, किडनी व मेंदूपासून होणारे विकार, मस्तकशूळ, अर्धशिशी, निद्रानाश असे आजार होऊ शकतात.",
+        "hi": "आपकी कुंडली के अनुसार, सिर, मुंह, मस्तिष्क, गर्दन, गर्दन की हड्डियाँ, गला, अन्नप्रणाली, श्वासनली और मुंह की हड्डियों पर चंद्र राशि और लग्न का प्रभाव रहता है। आपकी प्रकृति उष्ण होती है और स्वभाव में क्रोध व जल्दबाजी रहती है। जीवनशक्ति प्रचुर होती है लेकिन हृदय और गला ये दो अंग कमजोर रहते हैं। तले-भुने, मसालेदार और वसायुक्त भोजन कम खाएं। जीवन में गले, हृदय, गुर्दे और मस्तिष्क से संबंधित विकार, सिरदर्द, माइग्रेन, अनिद्रा जैसी बीमारियाँ हो सकती हैं।",
+        "en": "Based on your birth chart, the Moon sign and Ascendant influence the head, face, brain, neck, neck bones, throat, esophagus, trachea, and facial bones. Your constitution is hot-natured with tendencies toward anger and impulsiveness. You have abundant vitality, but the heart and throat are relatively weak areas. Reduce intake of oily, fried, spicy, and fat-increasing foods. You may be susceptible to throat, heart, kidney, and brain-related ailments, headaches, migraines, and insomnia during your lifetime."
+      }
+    },
+
+    "1_3": {
+      "code": "H.1.03",
+      "rashi": { "en": "Aries", "mr": "मेष", "hi": "मेष" },
+      "lagna": { "en": "Gemini", "mr": "मिथुन", "hi": "मिथुन" },
+      "content": {
+        "mr": "आपल्या कुंडलीचा विचार करता, डोके, तोंड, मेंदू, खांदे, बाहू, खांद्याची हाडे, फासळी व हाताची हाडे तसेच फुप्फुसे, श्वसन, श्वासनलिका यावर चंद्र राशी व लग्न राशीचा अंमल आहे. आपली प्रकृती उष्ण व आर्द्र असते. बौधिक राशी असल्याने शरीरातील मज्जातंतू लवकर बिघडतात. आपल्यामध्ये मानसिक शक्ती भरपूर असते परंतु शारिरीक जीवनशक्ती कमी असते. मेंदूला पोषक व मज्जातंतू बळकट करणारा आहार नेहमी घ्यावा. जीवनामध्ये आपणास फुप्फुसासंबंधी आजार, फ्रोझेन शोल्डर, मुळव्याध व मेंदूपासून होणारे विकार, मस्तकशूळ असे आजार होऊ शकतात.",
+        "hi": "आपकी कुंडली के अनुसार, सिर, मुंह, मस्तिष्क, कंधे, भुजाएं, कंधे की हड्डियाँ, पसलियां, हाथ की हड्डियाँ, फेफड़े, श्वसन तंत्र और श्वासनली पर चंद्र राशि और लग्न का प्रभाव रहता है। प्रकृति उष्ण और आर्द्र होती है। बुद्धि राशि होने से तंत्रिका तंत्र जल्दी कमजोर होता है। मानसिक शक्ति प्रचुर होती है लेकिन शारीरिक जीवनशक्ति कम रहती है। मस्तिष्क को पोषण देने वाला और तंत्रिकाओं को मजबूत करने वाला आहार लें। जीवन में फेफड़ों के रोग, फ्रोजन शोल्डर, बवासीर और मस्तिष्क विकार हो सकते हैं।",
+        "en": "Based on your birth chart, the Moon sign and Ascendant govern the head, face, brain, shoulders, arms, shoulder bones, ribs, hand bones, lungs, respiratory system, and trachea. Your constitution is hot and moist. Being an intellectual sign, the nervous system is prone to weakening early. You have great mental strength but relatively lower physical vitality. Always consume a brain-nourishing and nerve-strengthening diet. You may be susceptible to lung diseases, frozen shoulder, piles, brain disorders, and headaches during your lifetime."
+      }
+    },
+
+    "1_4": {
+      "code": "H.1.04",
+      "rashi": { "en": "Aries", "mr": "मेष", "hi": "मेष" },
+      "lagna": { "en": "Cancer", "mr": "कर्क", "hi": "कर्क" },
+      "content": {
+        "mr": "आपल्या कुंडलीचा विचार करता, डोके, तोंड, मेंदू, छाती, कोठा व पचनेन्द्रीये तसेच स्तनाची हाडे, फासळ्या यावर चंद्र राशी व लग्न राशीचा अंमल आहे. आपल्यामध्ये जीवनशक्ती व प्रतिकार शक्ती कमी असते. स्पर्शजन्य व साथीजन्य रोग, हवा, पाणी याचा परिणाम आरोग्यावर जास्त होतो. पोट व पचन क्रियेबाबत मुख्य तक्रार असते. कावीळ होण्याचे योग जीवनात येतात. तेलकट तळलेले, spicy पदार्थ, मेद वाढविणारे पदार्थ खाऊ नयेत. जीवनामध्ये आपणास यकृत, स्वादुपिंड, क्षय, रक्तदोष, व मायग्रेन असे आजार होऊ शकतात.",
+        "hi": "आपकी कुंडली के अनुसार, सिर, मुंह, मस्तिष्क, छाती, पेट और पाचन अंग तथा स्तन की हड्डियाँ और पसलियों पर चंद्र राशि और लग्न का प्रभाव रहता है। जीवनशक्ति और रोग प्रतिरोधक क्षमता कम होती है। संक्रामक और महामारी रोगों, हवा और पानी का स्वास्थ्य पर अधिक असर पड़ता है। पेट और पाचन की समस्या मुख्य रहती है। पीलिया होने के योग जीवन में आते हैं। तले-भुने और मसालेदार पदार्थ न खाएं। जीवन में लिवर, अग्न्याशय, क्षयरोग, रक्त दोष और माइग्रेन जैसी बीमारियाँ हो सकती हैं।",
+        "en": "Based on your birth chart, the Moon sign and Ascendant rule the head, face, brain, chest, stomach, digestive organs, breast bones, and ribs. Your vitality and immunity tend to be low. You are more susceptible to contagious and epidemic diseases, and air and water quality greatly impact your health. Stomach and digestive issues are primary concerns, and there are chances of jaundice in life. Avoid oily, fried, spicy, and fatty foods. You may be prone to liver, pancreas, tuberculosis, blood disorders, and migraines."
+      }
+    },
+
+    "1_5": {
+      "code": "H.1.05",
+      "rashi": { "en": "Aries", "mr": "मेष", "hi": "मेष" },
+      "lagna": { "en": "Leo", "mr": "सिंह", "hi": "सिंह" },
+      "content": {
+        "mr": "आपल्या कुंडलीचा विचार करता, डोके, तोंड, मेंदू, हृदय, पाठ, पाठीचा कणा यावर चंद्र राशी व लग्न राशीचा अंमल आहे. आपल्यामध्ये जीवनशक्ती व प्रतिकार शक्ती भरपूर असते. उष्ण पदार्थ, पेये, उत्तेजक औषधे याचा परिणाम आरोग्यावर जास्त होतो. नेहमी रक्त शुद्ध ठेवावे. न्युमोनिया होण्याचे योग जीवनात येतात. उष्ण, तेलकट तळलेले, spicy पदार्थ, मेद वाढविणारे पदार्थ खाऊ नयेत. पौष्टिक व रक्त वाढविणारा आहार नेहमी घ्यावा. जीवनामध्ये आपणास हृदय, मणका, पाठ, मेंदू या अवयवांसंबंधी आजार होऊ शकतात.",
+        "hi": "आपकी कुंडली के अनुसार, सिर, मुंह, मस्तिष्क, हृदय, पीठ और रीढ़ की हड्डी पर चंद्र राशि और लग्न का प्रभाव रहता है। जीवनशक्ति और रोग प्रतिरोधक क्षमता प्रचुर होती है। गर्म खाद्य पदार्थ, पेय और उत्तेजक दवाओं का स्वास्थ्य पर अधिक असर पड़ता है। रक्त हमेशा शुद्ध रखें। जीवन में निमोनिया होने के योग आते हैं। गर्म, तले-भुने और मसालेदार पदार्थ न खाएं। पौष्टिक और रक्त बढ़ाने वाला आहार लें। जीवन में हृदय, रीढ़, पीठ और मस्तिष्क संबंधी बीमारियाँ हो सकती हैं।",
+        "en": "Based on your birth chart, the Moon sign and Ascendant govern the head, face, brain, heart, back, and spine. You have abundant vitality and immunity. Hot foods, beverages, and stimulants significantly impact your health. Keep your blood pure at all times. There are possibilities of pneumonia in life. Avoid hot, oily, fried, spicy, and fat-increasing foods. Always consume nutritious, blood-building food. You may be susceptible to heart, spine, back, and brain-related ailments."
+      }
+    },
+
+    "1_6": {
+      "code": "H.1.06",
+      "rashi": { "en": "Aries", "mr": "मेष", "hi": "मेष" },
+      "lagna": { "en": "Virgo", "mr": "कन्या", "hi": "कन्या" },
+      "content": {
+        "mr": "आपल्या कुंडलीचा विचार करता, डोके, मेंदू, कोठा, नाभीजवळील भाग, लहान मोठी आंतडी, कोठ्यातील आंतडी, पाठीचा कणा खालील भाग यावर चंद्र राशी व लग्न राशीचा अंमल आहे. आपल्यामध्ये जीवनशक्ती व प्रतिकार शक्ती कमी असते. कोणत्याही घटनेचा मनावर त्वरित परिणाम होतो. कोठा व पचनेन्द्रीये हे भाग लवकर बिघडतात. साधा, सात्विक व ताजा आहार घेणे आवश्यक आहे. जीवनामध्ये आपणास रक्त व मानसिक स्थिती बिघडणे, मज्जातंतूचा क्षोभ, डोळा, मेंदू यासंबंधी आजार होऊ शकतात.",
+        "hi": "आपकी कुंडली के अनुसार, सिर, मस्तिष्क, पेट, नाभि के पास का क्षेत्र, छोटी-बड़ी आंतें और रीढ़ के निचले भाग पर चंद्र राशि और लग्न का प्रभाव रहता है। जीवनशक्ति और प्रतिरोधक क्षमता कम होती है। किसी भी घटना का मन पर तुरंत प्रभाव पड़ता है। पेट और पाचन अंग जल्दी बिगड़ते हैं। सादा, सात्विक और ताजा आहार लें। जीवन में रक्त और मानसिक स्थिति बिगड़ना, नसों में उत्तेजना, आंखों और मस्तिष्क संबंधी बीमारियाँ हो सकती हैं।",
+        "en": "Based on your birth chart, the Moon sign and Ascendant rule the head, brain, stomach, navel region, small and large intestines, and the lower spine. Your vitality and immunity tend to be low. Mental events quickly affect your health. The stomach and digestive organs are vulnerable. Always eat simple, sattvic, and fresh food. You may be susceptible to blood and mental health disorders, nervous irritation, and eye and brain-related ailments."
+      }
+    },
+
+    "1_7": {
+      "code": "H.1.07",
+      "rashi": { "en": "Aries", "mr": "मेष", "hi": "मेष" },
+      "lagna": { "en": "Libra", "mr": "तुळ", "hi": "तुला" },
+      "content": {
+        "mr": "आपल्या कुंडलीचा विचार करता, डोके, मेंदू, त्वचा, कमरेचा भाग, मुत्रपिंड, कटीराची हाडे यावर चंद्र राशी व लग्न राशीचा अंमल आहे. स्वभावात थोडा उतावळेपणा, चंचलता असते. मोकळी हवा, सामान्य व्यायाम, पिण्याचे शुध्द पाणी व योग्य राहणी असेल तर आरोग्य उत्तम राहते. आपल्यामध्ये जीवनशक्ती व प्रतिकार शक्ती कमी असते. थंडीच्या दिवसात आरोग्य बिघडते. जीवनामध्ये आपणास मूत्रपिंडाचे आजार, मधुमेह, मुत्रावरोध यासंबंधी आजार होऊ शकतात.",
+        "hi": "आपकी कुंडली के अनुसार, सिर, मस्तिष्क, त्वचा, कमर, गुर्दे और कूल्हे की हड्डियों पर चंद्र राशि और लग्न का प्रभाव रहता है। स्वभाव में कुछ जल्दबाजी और चंचलता रहती है। ताजी हवा, हल्का व्यायाम, शुद्ध पेयजल और उचित जीवनशैली से स्वास्थ्य उत्तम रहता है। जीवनशक्ति और प्रतिरोधक क्षमता कम होती है। ठंड के दिनों में स्वास्थ्य बिगड़ता है। जीवन में गुर्दे की बीमारियाँ, मधुमेह और मूत्र अवरोध हो सकता है।",
+        "en": "Based on your birth chart, the Moon sign and Ascendant govern the head, brain, skin, lower back, kidneys, and hip bones. You may have some impulsiveness and restlessness. Fresh air, moderate exercise, pure drinking water, and a proper lifestyle keep you healthy. Your vitality and immunity tend to be low, and health deteriorates during cold weather. You may be susceptible to kidney diseases, diabetes, and urinary obstruction."
+      }
+    },
+
+    "1_8": {
+      "code": "H.1.08",
+      "rashi": { "en": "Aries", "mr": "मेष", "hi": "मेष" },
+      "lagna": { "en": "Scorpio", "mr": "वृश्चिक", "hi": "वृश्चिक" },
+      "content": {
+        "mr": "आपल्या कुंडलीचा विचार करता, डोके, गळा, हृदय, मलोत्सर्जक क्रिया यावर चंद्र राशी व लग्न राशीचा अंमल आहे. स्वभावात अतिरेक व आसक्ती असते, आहार विहारात नियमन नसते त्यामुळे साथीजन्य आजार लवकर होतात. कॉलरा, टायफोईड, एन्फ्लुएन्जा अशा आजारापासून सावध राहावे. मोकळी हवा, सामान्य व्यायाम, पिण्याचे शुध्द पाणी व योग्य राहणी असेल तर आरोग्य उत्तम राहते. जीवनामध्ये आपणास मूत्राशय, जननेन्द्रिय, आमवात, मुळव्याध, हाताची बोटे सुजणे या बाबत आजार होऊ शकतात.",
+        "hi": "आपकी कुंडली के अनुसार, सिर, गला, हृदय और उत्सर्जन क्रियाओं पर चंद्र राशि और लग्न का प्रभाव रहता है। स्वभाव में अति और आसक्ति होती है, आहार-विहार में अनुशासन न होने से संक्रामक रोग जल्दी होते हैं। हैजा, टाइफाइड, इन्फ्लुएंजा से सावधान रहें। ताजी हवा, हल्का व्यायाम और शुद्ध जल से स्वास्थ्य अच्छा रहता है। जीवन में मूत्राशय, जननांग, गठिया, बवासीर और उंगलियों में सूजन की समस्या हो सकती है।",
+        "en": "Based on your birth chart, the Moon sign and Ascendant govern the head, throat, heart, and excretory functions. You may have a tendency toward excess and indulgence, and irregular diet and lifestyle can cause early susceptibility to infectious diseases. Beware of cholera, typhoid, and influenza. Fresh air, moderate exercise, and pure drinking water maintain good health. You may be susceptible to bladder, reproductive organ, rheumatism, piles, and finger swelling issues."
+      }
+    },
+
+    "1_9": {
+      "code": "H.1.09",
+      "rashi": { "en": "Aries", "mr": "मेष", "hi": "मेष" },
+      "lagna": { "en": "Sagittarius", "mr": "धनु", "hi": "धनु" },
+      "content": {
+        "mr": "आपल्या कुंडलीचा विचार करता, डोके, शिर, धमनी, मज्जातंतू, मांडी व पृष्ठभाग यावर चंद्र राशी व लग्न राशीचा अंमल आहे. स्वभावात अतिरेक व आसक्ती असते. अतिश्रमामुळे आरोग्य बिघडते. पाळीव प्राणी, श्वापदे, कुत्रा यापासून इजा होऊ शकते. आहार रक्त वाढविणारा व मज्जातंतूस पोषक असावा. उष्ण व मादक-उत्तेजक पदार्थ खाऊ नयेत. जीवनामध्ये आपणास मूत्रपिंड, मलोत्सर्जक क्रिया, गळ्याचे विकार, मज्जातंतू यासंबंधी आजार होऊ शकतात.",
+        "hi": "आपकी कुंडली के अनुसार, सिर, धमनियाँ, तंत्रिकाएं, जांघ और पृष्ठभाग पर चंद्र राशि और लग्न का प्रभाव रहता है। स्वभाव में अति और आसक्ति होती है। अत्यधिक परिश्रम से स्वास्थ्य बिगड़ता है। पालतू जानवरों और कुत्तों से चोट लग सकती है। रक्त बढ़ाने वाला और तंत्रिका पोषक आहार लें। उत्तेजक पदार्थ न खाएं। जीवन में गुर्दे, उत्सर्जन, गले के विकार और तंत्रिका संबंधी बीमारियाँ हो सकती हैं।",
+        "en": "Based on your birth chart, the Moon sign and Ascendant govern the head, arteries, nervous system, thighs, and back region. You may have tendencies toward excess and indulgence. Overexertion deteriorates health. Beware of injuries from pets and dogs. Follow a blood-building and nerve-nourishing diet. Avoid hot and intoxicating substances. You may be susceptible to kidney, excretory, throat, and nervous system disorders during your lifetime."
+      }
+    },
+
+    "1_10": {
+      "code": "H.1.10",
+      "rashi": { "en": "Aries", "mr": "मेष", "hi": "मेष" },
+      "lagna": { "en": "Capricorn", "mr": "मकर", "hi": "मकर" },
+      "content": {
+        "mr": "आपल्या कुंडलीचा विचार करता, डोके, गुडघे, पोटऱ्या, सांधे, त्वचा यावर चंद्र राशी व लग्न राशीचा अंमल आहे. मानसिक औदासिन्य असते, आपणास होणारे आजार हे प्रामुख्याने नकारात्मक दृष्टीकोन, असमाधान व उदासिनता यामुळे होतात. आहार रक्त वाढविणारा, काहीसा उष्ण व उत्तेजक तसेच मज्जातंतूस पोषक असावा. बद्धकोष्ठतेची सवय असते. शैत्य व थंडीपासून आरोग्याची काळजी घ्यावी. जीवनामध्ये आपणास मलोत्सर्जक क्रिया, फुप्फुस, गुडघे व मज्जातंतू यासंबंधी आजार होऊ शकतात.",
+        "hi": "आपकी कुंडली के अनुसार, सिर, घुटने, पिंडलियाँ, जोड़ और त्वचा पर चंद्र राशि और लग्न का प्रभाव रहता है। मानसिक अवसाद रहता है और बीमारियाँ मुख्यतः नकारात्मक सोच, असंतोष और उदासी के कारण होती हैं। रक्त बढ़ाने वाला, हल्का उष्ण, उत्तेजक और तंत्रिका पोषक आहार लें। कब्ज की आदत रहती है। ठंड से बचाव करें। जीवन में उत्सर्जन, फेफड़े, घुटने और तंत्रिका संबंधी बीमारियाँ हो सकती हैं।",
+        "en": "Based on your birth chart, the Moon sign and Ascendant govern the head, knees, calves, joints, and skin. There may be a tendency toward mental depression, and illnesses primarily stem from a negative outlook, dissatisfaction, and sadness. Follow a blood-building, mildly warming, stimulating, and nerve-nourishing diet. Constipation is a common tendency. Protect yourself from cold and frost. You may be susceptible to excretory, lung, knee, and nervous system disorders."
+      }
+    },
+
+    "1_11": {
+      "code": "H.1.11",
+      "rashi": { "en": "Aries", "mr": "मेष", "hi": "मेष" },
+      "lagna": { "en": "Aquarius", "mr": "कुंभ", "hi": "कुंभ" },
+      "content": {
+        "mr": "आपल्या कुंडलीचा विचार करता, डोके, कोपर, पाय, पायाचे घोटे, नसा, रक्त व हृदयाभिसरण यावर चंद्र राशी व लग्न राशीचा अंमल आहे. मानसिक व शारिरीक जीवनशक्ती जास्त असते. आहार मेंदूला पोषक, मज्जातंतू बळकट करणारा व रक्त वर्धक असावा. दृष्टीची काळजी घ्यावी. मानसिक क्षोभाची कोणतीही गोष्ट करू नये. अति उष्ण, जड, तेलकट तळलेले, spicy पदार्थ खाऊ नयेत. जीवनामध्ये आपणास पचन क्रिया, मेदवृध्दी, हृदय व मज्जातंतू यासंबंधी आजार होऊ शकतात.",
+        "hi": "आपकी कुंडली के अनुसार, सिर, कोहनी, पैर, टखने, नसें, रक्त और हृदय परिसंचरण पर चंद्र राशि और लग्न का प्रभाव रहता है। मानसिक और शारीरिक जीवनशक्ति अधिक होती है। मस्तिष्क पोषक, तंत्रिका मजबूत करने वाला और रक्त वर्धक आहार लें। दृष्टि का ध्यान रखें। मानसिक उद्वेग से बचें। अत्यधिक गर्म, भारी और तले-भुने पदार्थ न खाएं। जीवन में पाचन, मोटापा, हृदय और तंत्रिका संबंधी बीमारियाँ हो सकती हैं।",
+        "en": "Based on your birth chart, the Moon sign and Ascendant govern the head, elbows, feet, ankles, nerves, blood, and circulatory system. You have strong mental and physical vitality. Follow a brain-nourishing, nerve-strengthening, and blood-building diet. Take care of your eyesight. Avoid mentally disturbing situations. Avoid excessively hot, heavy, oily, fried, and spicy foods. You may be susceptible to digestive issues, obesity, heart, and nervous system disorders."
+      }
+    },
+
+    "1_12": {
+      "code": "H.1.12",
+      "rashi": { "en": "Aries", "mr": "मेष", "hi": "मेष" },
+      "lagna": { "en": "Pisces", "mr": "मीन", "hi": "मीन" },
+      "content": {
+        "mr": "आपल्या कुंडलीचा विचार करता, डोके, शरिरातील लसात्मक द्रव्य, पाऊले, तळव्याची व पायाच्या बोटाची हाडे, हृदयाभिसरण यावर चंद्र राशी व लग्न राशीचा अंमल आहे. मानसिक व नैसर्गिक शारिरीक जीवनशक्ती कमी असते. अत्यंत मानसिक काळजी व अतिश्रम याने आरोग्य बिघडते. पायातून थंडी व शैत्य याचा उपद्रव शरीरास होतो. व्यसन, निष्काळजीपणा व विसराळू स्वभाव यामुळे आरोग्य बिघडते. आहार मेंदूला पोषक, मज्जातंतू बळकट करणारा व रक्त वर्धक असावा. जीवनामध्ये आपणास पचन क्रिया, मेदवृध्दी, घसा व मलोत्सर्जन क्रिया यासंबंधी आजार होऊ शकतात.",
+        "hi": "आपकी कुंडली के अनुसार, सिर, शरीर के लसीका द्रव, पैर, तलवे और पैर की अंगुलियों की हड्डियाँ तथा हृदय परिसंचरण पर चंद्र राशि और लग्न का प्रभाव रहता है। मानसिक और शारीरिक जीवनशक्ति कम होती है। अत्यधिक मानसिक चिंता और परिश्रम से स्वास्थ्य बिगड़ता है। पैरों से ठंड का शरीर पर प्रभाव पड़ता है। व्यसन, लापरवाही और भुलक्कड़पन से स्वास्थ्य बिगड़ता है। मस्तिष्क पोषक और रक्त वर्धक आहार लें। जीवन में पाचन, मोटापा, गले और उत्सर्जन संबंधी बीमारियाँ हो सकती हैं।",
+        "en": "Based on your birth chart, the Moon sign and Ascendant govern the head, lymphatic fluids, feet, sole and toe bones, and circulatory system. Mental and natural physical vitality tend to be low. Excessive mental worry and overexertion deteriorate health. Cold from the feet affects the body negatively. Addictions, carelessness, and a forgetful nature can harm health. Follow a brain-nourishing, nerve-strengthening, and blood-building diet. You may be susceptible to digestive issues, obesity, throat, and excretory disorders."
+      }
+    },
+
+    "2_1":  { "code": "H.2.01",  "rashi": { "en": "Taurus",      "mr": "वृषभ",    "hi": "वृषभ"    }, "lagna": { "en": "Aries",       "mr": "मेष",     "hi": "मेष"     }, "content": null },
+    "2_2":  { "code": "H.2.02",  "rashi": { "en": "Taurus",      "mr": "वृषभ",    "hi": "वृषभ"    }, "lagna": { "en": "Taurus",      "mr": "वृषभ",    "hi": "वृषभ"    }, "content": null },
+    "2_3":  { "code": "H.2.03",  "rashi": { "en": "Taurus",      "mr": "वृषभ",    "hi": "वृषभ"    }, "lagna": { "en": "Gemini",      "mr": "मिथुन",   "hi": "मिथुन"   }, "content": null },
+    "2_4":  { "code": "H.2.04",  "rashi": { "en": "Taurus",      "mr": "वृषभ",    "hi": "वृषभ"    }, "lagna": { "en": "Cancer",      "mr": "कर्क",    "hi": "कर्क"    }, "content": null },
+    "2_5":  { "code": "H.2.05",  "rashi": { "en": "Taurus",      "mr": "वृषभ",    "hi": "वृषभ"    }, "lagna": { "en": "Leo",         "mr": "सिंह",    "hi": "सिंह"    }, "content": null },
+    "2_6":  { "code": "H.2.06",  "rashi": { "en": "Taurus",      "mr": "वृषभ",    "hi": "वृषभ"    }, "lagna": { "en": "Virgo",       "mr": "कन्या",   "hi": "कन्या"   }, "content": null },
+    "2_7":  { "code": "H.2.07",  "rashi": { "en": "Taurus",      "mr": "वृषभ",    "hi": "वृषभ"    }, "lagna": { "en": "Libra",       "mr": "तुळ",     "hi": "तुला"    }, "content": null },
+    "2_8":  { "code": "H.2.08",  "rashi": { "en": "Taurus",      "mr": "वृषभ",    "hi": "वृषभ"    }, "lagna": { "en": "Scorpio",     "mr": "वृश्चिक", "hi": "वृश्चिक" }, "content": null },
+    "2_9":  { "code": "H.2.09",  "rashi": { "en": "Taurus",      "mr": "वृषभ",    "hi": "वृषभ"    }, "lagna": { "en": "Sagittarius", "mr": "धनु",     "hi": "धनु"     }, "content": null },
+    "2_10": { "code": "H.2.10",  "rashi": { "en": "Taurus",      "mr": "वृषभ",    "hi": "वृषभ"    }, "lagna": { "en": "Capricorn",   "mr": "मकर",     "hi": "मकर"     }, "content": null },
+    "2_11": { "code": "H.2.11",  "rashi": { "en": "Taurus",      "mr": "वृषभ",    "hi": "वृषभ"    }, "lagna": { "en": "Aquarius",    "mr": "कुंभ",    "hi": "कुंभ"    }, "content": null },
+    "2_12": { "code": "H.2.12",  "rashi": { "en": "Taurus",      "mr": "वृषभ",    "hi": "वृषभ"    }, "lagna": { "en": "Pisces",      "mr": "मीन",     "hi": "मीन"     }, "content": null },
+    "3_1":  { "code": "H.3.01",  "rashi": { "en": "Gemini",      "mr": "मिथुन",   "hi": "मिथुन"   }, "lagna": { "en": "Aries",       "mr": "मेष",     "hi": "मेष"     }, "content": null },
+    "3_2":  { "code": "H.3.02",  "rashi": { "en": "Gemini",      "mr": "मिथुन",   "hi": "मिथुन"   }, "lagna": { "en": "Taurus",      "mr": "वृषभ",    "hi": "वृषभ"    }, "content": null },
+    "3_3":  { "code": "H.3.03",  "rashi": { "en": "Gemini",      "mr": "मिथुन",   "hi": "मिथुन"   }, "lagna": { "en": "Gemini",      "mr": "मिथुन",   "hi": "मिथुन"   }, "content": null },
+    "3_4":  { "code": "H.3.04",  "rashi": { "en": "Gemini",      "mr": "मिथुन",   "hi": "मिथुन"   }, "lagna": { "en": "Cancer",      "mr": "कर्क",    "hi": "कर्क"    }, "content": null },
+    "3_5":  { "code": "H.3.05",  "rashi": { "en": "Gemini",      "mr": "मिथुन",   "hi": "मिथुन"   }, "lagna": { "en": "Leo",         "mr": "सिंह",    "hi": "सिंह"    }, "content": null },
+    "3_6":  { "code": "H.3.06",  "rashi": { "en": "Gemini",      "mr": "मिथुन",   "hi": "मिथुन"   }, "lagna": { "en": "Virgo",       "mr": "कन्या",   "hi": "कन्या"   }, "content": null },
+    "3_7":  { "code": "H.3.07",  "rashi": { "en": "Gemini",      "mr": "मिथुन",   "hi": "मिथुन"   }, "lagna": { "en": "Libra",       "mr": "तुळ",     "hi": "तुला"    }, "content": null },
+    "3_8":  { "code": "H.3.08",  "rashi": { "en": "Gemini",      "mr": "मिथुन",   "hi": "मिथुन"   }, "lagna": { "en": "Scorpio",     "mr": "वृश्चिक", "hi": "वृश्चिक" }, "content": null },
+    "3_9":  { "code": "H.3.09",  "rashi": { "en": "Gemini",      "mr": "मिथुन",   "hi": "मिथुन"   }, "lagna": { "en": "Sagittarius", "mr": "धनु",     "hi": "धनु"     }, "content": null },
+    "3_10": { "code": "H.3.10",  "rashi": { "en": "Gemini",      "mr": "मिथुन",   "hi": "मिथुन"   }, "lagna": { "en": "Capricorn",   "mr": "मकर",     "hi": "मकर"     }, "content": null },
+    "3_11": { "code": "H.3.11",  "rashi": { "en": "Gemini",      "mr": "मिथुन",   "hi": "मिथुन"   }, "lagna": { "en": "Aquarius",    "mr": "कुंभ",    "hi": "कुंभ"    }, "content": null },
+    "3_12": { "code": "H.3.12",  "rashi": { "en": "Gemini",      "mr": "मिथुन",   "hi": "मिथुन"   }, "lagna": { "en": "Pisces",      "mr": "मीन",     "hi": "मीन"     }, "content": null },
+    "4_1":  { "code": "H.4.01",  "rashi": { "en": "Cancer",      "mr": "कर्क",    "hi": "कर्क"    }, "lagna": { "en": "Aries",       "mr": "मेष",     "hi": "मेष"     }, "content": null },
+    "4_2":  { "code": "H.4.02",  "rashi": { "en": "Cancer",      "mr": "कर्क",    "hi": "कर्क"    }, "lagna": { "en": "Taurus",      "mr": "वृषभ",    "hi": "वृषभ"    }, "content": null },
+    "4_3":  { "code": "H.4.03",  "rashi": { "en": "Cancer",      "mr": "कर्क",    "hi": "कर्क"    }, "lagna": { "en": "Gemini",      "mr": "मिथुन",   "hi": "मिथुन"   }, "content": null },
+    "4_4":  { "code": "H.4.04",  "rashi": { "en": "Cancer",      "mr": "कर्क",    "hi": "कर्क"    }, "lagna": { "en": "Cancer",      "mr": "कर्क",    "hi": "कर्क"    }, "content": null },
+    "4_5":  { "code": "H.4.05",  "rashi": { "en": "Cancer",      "mr": "कर्क",    "hi": "कर्क"    }, "lagna": { "en": "Leo",         "mr": "सिंह",    "hi": "सिंह"    }, "content": null },
+    "4_6":  { "code": "H.4.06",  "rashi": { "en": "Cancer",      "mr": "कर्क",    "hi": "कर्क"    }, "lagna": { "en": "Virgo",       "mr": "कन्या",   "hi": "कन्या"   }, "content": null },
+    "4_7":  { "code": "H.4.07",  "rashi": { "en": "Cancer",      "mr": "कर्क",    "hi": "कर्क"    }, "lagna": { "en": "Libra",       "mr": "तुळ",     "hi": "तुला"    }, "content": null },
+    "4_8":  { "code": "H.4.08",  "rashi": { "en": "Cancer",      "mr": "कर्क",    "hi": "कर्क"    }, "lagna": { "en": "Scorpio",     "mr": "वृश्चिक", "hi": "वृश्चिक" }, "content": null },
+    "4_9":  { "code": "H.4.09",  "rashi": { "en": "Cancer",      "mr": "कर्क",    "hi": "कर्क"    }, "lagna": { "en": "Sagittarius", "mr": "धनु",     "hi": "धनु"     }, "content": null },
+    "4_10": { "code": "H.4.10",  "rashi": { "en": "Cancer",      "mr": "कर्क",    "hi": "कर्क"    }, "lagna": { "en": "Capricorn",   "mr": "मकर",     "hi": "मकर"     }, "content": null },
+    "4_11": { "code": "H.4.11",  "rashi": { "en": "Cancer",      "mr": "कर्क",    "hi": "कर्क"    }, "lagna": { "en": "Aquarius",    "mr": "कुंभ",    "hi": "कुंभ"    }, "content": null },
+    "4_12": { "code": "H.4.12",  "rashi": { "en": "Cancer",      "mr": "कर्क",    "hi": "कर्क"    }, "lagna": { "en": "Pisces",      "mr": "मीन",     "hi": "मीन"     }, "content": null },
+    "5_1":  { "code": "H.5.01",  "rashi": { "en": "Leo",         "mr": "सिंह",    "hi": "सिंह"    }, "lagna": { "en": "Aries",       "mr": "मेष",     "hi": "मेष"     }, "content": null },
+    "5_2":  { "code": "H.5.02",  "rashi": { "en": "Leo",         "mr": "सिंह",    "hi": "सिंह"    }, "lagna": { "en": "Taurus",      "mr": "वृषभ",    "hi": "वृषभ"    }, "content": null },
+    "5_3":  { "code": "H.5.03",  "rashi": { "en": "Leo",         "mr": "सिंह",    "hi": "सिंह"    }, "lagna": { "en": "Gemini",      "mr": "मिथुन",   "hi": "मिथुन"   }, "content": null },
+    "5_4":  { "code": "H.5.04",  "rashi": { "en": "Leo",         "mr": "सिंह",    "hi": "सिंह"    }, "lagna": { "en": "Cancer",      "mr": "कर्क",    "hi": "कर्क"    }, "content": null },
+    "5_5":  { "code": "H.5.05",  "rashi": { "en": "Leo",         "mr": "सिंह",    "hi": "सिंह"    }, "lagna": { "en": "Leo",         "mr": "सिंह",    "hi": "सिंह"    }, "content": null },
+    "5_6":  { "code": "H.5.06",  "rashi": { "en": "Leo",         "mr": "सिंह",    "hi": "सिंह"    }, "lagna": { "en": "Virgo",       "mr": "कन्या",   "hi": "कन्या"   }, "content": null },
+    "5_7":  { "code": "H.5.07",  "rashi": { "en": "Leo",         "mr": "सिंह",    "hi": "सिंह"    }, "lagna": { "en": "Libra",       "mr": "तुळ",     "hi": "तुला"    }, "content": null },
+    "5_8":  { "code": "H.5.08",  "rashi": { "en": "Leo",         "mr": "सिंह",    "hi": "सिंह"    }, "lagna": { "en": "Scorpio",     "mr": "वृश्चिक", "hi": "वृश्चिक" }, "content": null },
+    "5_9":  { "code": "H.5.09",  "rashi": { "en": "Leo",         "mr": "सिंह",    "hi": "सिंह"    }, "lagna": { "en": "Sagittarius", "mr": "धनु",     "hi": "धनु"     }, "content": null },
+    "5_10": { "code": "H.5.10",  "rashi": { "en": "Leo",         "mr": "सिंह",    "hi": "सिंह"    }, "lagna": { "en": "Capricorn",   "mr": "मकर",     "hi": "मकर"     }, "content": null },
+    "5_11": { "code": "H.5.11",  "rashi": { "en": "Leo",         "mr": "सिंह",    "hi": "सिंह"    }, "lagna": { "en": "Aquarius",    "mr": "कुंभ",    "hi": "कुंभ"    }, "content": null },
+    "5_12": { "code": "H.5.12",  "rashi": { "en": "Leo",         "mr": "सिंह",    "hi": "सिंह"    }, "lagna": { "en": "Pisces",      "mr": "मीन",     "hi": "मीन"     }, "content": null },
+    "6_1":  { "code": "H.6.01",  "rashi": { "en": "Virgo",       "mr": "कन्या",   "hi": "कन्या"   }, "lagna": { "en": "Aries",       "mr": "मेष",     "hi": "मेष"     }, "content": null },
+    "6_2":  { "code": "H.6.02",  "rashi": { "en": "Virgo",       "mr": "कन्या",   "hi": "कन्या"   }, "lagna": { "en": "Taurus",      "mr": "वृषभ",    "hi": "वृषभ"    }, "content": null },
+    "6_3":  { "code": "H.6.03",  "rashi": { "en": "Virgo",       "mr": "कन्या",   "hi": "कन्या"   }, "lagna": { "en": "Gemini",      "mr": "मिथुन",   "hi": "मिथुन"   }, "content": null },
+    "6_4":  { "code": "H.6.04",  "rashi": { "en": "Virgo",       "mr": "कन्या",   "hi": "कन्या"   }, "lagna": { "en": "Cancer",      "mr": "कर्क",    "hi": "कर्क"    }, "content": null },
+    "6_5":  { "code": "H.6.05",  "rashi": { "en": "Virgo",       "mr": "कन्या",   "hi": "कन्या"   }, "lagna": { "en": "Leo",         "mr": "सिंह",    "hi": "सिंह"    }, "content": null },
+    "6_6":  { "code": "H.6.06",  "rashi": { "en": "Virgo",       "mr": "कन्या",   "hi": "कन्या"   }, "lagna": { "en": "Virgo",       "mr": "कन्या",   "hi": "कन्या"   }, "content": null },
+    "6_7":  { "code": "H.6.07",  "rashi": { "en": "Virgo",       "mr": "कन्या",   "hi": "कन्या"   }, "lagna": { "en": "Libra",       "mr": "तुळ",     "hi": "तुला"    }, "content": null },
+    "6_8":  { "code": "H.6.08",  "rashi": { "en": "Virgo",       "mr": "कन्या",   "hi": "कन्या"   }, "lagna": { "en": "Scorpio",     "mr": "वृश्चिक", "hi": "वृश्चिक" }, "content": null },
+    "6_9":  { "code": "H.6.09",  "rashi": { "en": "Virgo",       "mr": "कन्या",   "hi": "कन्या"   }, "lagna": { "en": "Sagittarius", "mr": "धनु",     "hi": "धनु"     }, "content": null },
+    "6_10": { "code": "H.6.10",  "rashi": { "en": "Virgo",       "mr": "कन्या",   "hi": "कन्या"   }, "lagna": { "en": "Capricorn",   "mr": "मकर",     "hi": "मकर"     }, "content": null },
+    "6_11": { "code": "H.6.11",  "rashi": { "en": "Virgo",       "mr": "कन्या",   "hi": "कन्या"   }, "lagna": { "en": "Aquarius",    "mr": "कुंभ",    "hi": "कुंभ"    }, "content": null },
+    "6_12": { "code": "H.6.12",  "rashi": { "en": "Virgo",       "mr": "कन्या",   "hi": "कन्या"   }, "lagna": { "en": "Pisces",      "mr": "मीन",     "hi": "मीन"     }, "content": null },
+    "7_1":  { "code": "H.7.01",  "rashi": { "en": "Libra",       "mr": "तुळ",     "hi": "तुला"    }, "lagna": { "en": "Aries",       "mr": "मेष",     "hi": "मेष"     }, "content": null },
+    "7_2":  { "code": "H.7.02",  "rashi": { "en": "Libra",       "mr": "तुळ",     "hi": "तुला"    }, "lagna": { "en": "Taurus",      "mr": "वृषभ",    "hi": "वृषभ"    }, "content": null },
+    "7_3":  { "code": "H.7.03",  "rashi": { "en": "Libra",       "mr": "तुळ",     "hi": "तुला"    }, "lagna": { "en": "Gemini",      "mr": "मिथुन",   "hi": "मिथुन"   }, "content": null },
+    "7_4":  { "code": "H.7.04",  "rashi": { "en": "Libra",       "mr": "तुळ",     "hi": "तुला"    }, "lagna": { "en": "Cancer",      "mr": "कर्क",    "hi": "कर्क"    }, "content": null },
+    "7_5":  { "code": "H.7.05",  "rashi": { "en": "Libra",       "mr": "तुळ",     "hi": "तुला"    }, "lagna": { "en": "Leo",         "mr": "सिंह",    "hi": "सिंह"    }, "content": null },
+    "7_6":  { "code": "H.7.06",  "rashi": { "en": "Libra",       "mr": "तुळ",     "hi": "तुला"    }, "lagna": { "en": "Virgo",       "mr": "कन्या",   "hi": "कन्या"   }, "content": null },
+    "7_7":  { "code": "H.7.07",  "rashi": { "en": "Libra",       "mr": "तुळ",     "hi": "तुला"    }, "lagna": { "en": "Libra",       "mr": "तुळ",     "hi": "तुला"    }, "content": null },
+    "7_8":  { "code": "H.7.08",  "rashi": { "en": "Libra",       "mr": "तुळ",     "hi": "तुला"    }, "lagna": { "en": "Scorpio",     "mr": "वृश्चिक", "hi": "वृश्चिक" }, "content": null },
+    "7_9":  { "code": "H.7.09",  "rashi": { "en": "Libra",       "mr": "तुळ",     "hi": "तुला"    }, "lagna": { "en": "Sagittarius", "mr": "धनु",     "hi": "धनु"     }, "content": null },
+    "7_10": { "code": "H.7.10",  "rashi": { "en": "Libra",       "mr": "तुळ",     "hi": "तुला"    }, "lagna": { "en": "Capricorn",   "mr": "मकर",     "hi": "मकर"     }, "content": null },
+    "7_11": { "code": "H.7.11",  "rashi": { "en": "Libra",       "mr": "तुळ",     "hi": "तुला"    }, "lagna": { "en": "Aquarius",    "mr": "कुंभ",    "hi": "कुंभ"    }, "content": null },
+    "7_12": { "code": "H.7.12",  "rashi": { "en": "Libra",       "mr": "तुळ",     "hi": "तुला"    }, "lagna": { "en": "Pisces",      "mr": "मीन",     "hi": "मीन"     }, "content": null },
+    "8_1":  { "code": "H.8.01",  "rashi": { "en": "Scorpio",     "mr": "वृश्चिक", "hi": "वृश्चिक" }, "lagna": { "en": "Aries",       "mr": "मेष",     "hi": "मेष"     }, "content": null },
+    "8_2":  { "code": "H.8.02",  "rashi": { "en": "Scorpio",     "mr": "वृश्चिक", "hi": "वृश्चिक" }, "lagna": { "en": "Taurus",      "mr": "वृषभ",    "hi": "वृषभ"    }, "content": null },
+    "8_3":  { "code": "H.8.03",  "rashi": { "en": "Scorpio",     "mr": "वृश्चिक", "hi": "वृश्चिक" }, "lagna": { "en": "Gemini",      "mr": "मिथुन",   "hi": "मिथुन"   }, "content": null },
+    "8_4":  { "code": "H.8.04",  "rashi": { "en": "Scorpio",     "mr": "वृश्चिक", "hi": "वृश्चिक" }, "lagna": { "en": "Cancer",      "mr": "कर्क",    "hi": "कर्क"    }, "content": null },
+    "8_5":  { "code": "H.8.05",  "rashi": { "en": "Scorpio",     "mr": "वृश्चिक", "hi": "वृश्चिक" }, "lagna": { "en": "Leo",         "mr": "सिंह",    "hi": "सिंह"    }, "content": null },
+    "8_6":  { "code": "H.8.06",  "rashi": { "en": "Scorpio",     "mr": "वृश्चिक", "hi": "वृश्चिक" }, "lagna": { "en": "Virgo",       "mr": "कन्या",   "hi": "कन्या"   }, "content": null },
+    "8_7":  { "code": "H.8.07",  "rashi": { "en": "Scorpio",     "mr": "वृश्चिक", "hi": "वृश्चिक" }, "lagna": { "en": "Libra",       "mr": "तुळ",     "hi": "तुला"    }, "content": null },
+    "8_8":  { "code": "H.8.08",  "rashi": { "en": "Scorpio",     "mr": "वृश्चिक", "hi": "वृश्चिक" }, "lagna": { "en": "Scorpio",     "mr": "वृश्चिक", "hi": "वृश्चिक" }, "content": null },
+    "8_9":  { "code": "H.8.09",  "rashi": { "en": "Scorpio",     "mr": "वृश्चिक", "hi": "वृश्चिक" }, "lagna": { "en": "Sagittarius", "mr": "धनु",     "hi": "धनु"     }, "content": null },
+    "8_10": { "code": "H.8.10",  "rashi": { "en": "Scorpio",     "mr": "वृश्चिक", "hi": "वृश्चिक" }, "lagna": { "en": "Capricorn",   "mr": "मकर",     "hi": "मकर"     }, "content": null },
+    "8_11": { "code": "H.8.11",  "rashi": { "en": "Scorpio",     "mr": "वृश्चिक", "hi": "वृश्चिक" }, "lagna": { "en": "Aquarius",    "mr": "कुंभ",    "hi": "कुंभ"    }, "content": null },
+    "8_12": { "code": "H.8.12",  "rashi": { "en": "Scorpio",     "mr": "वृश्चिक", "hi": "वृश्चिक" }, "lagna": { "en": "Pisces",      "mr": "मीन",     "hi": "मीन"     }, "content": null },
+    "9_1":  { "code": "H.9.01",  "rashi": { "en": "Sagittarius", "mr": "धनु",     "hi": "धनु"     }, "lagna": { "en": "Aries",       "mr": "मेष",     "hi": "मेष"     }, "content": null },
+    "9_2":  { "code": "H.9.02",  "rashi": { "en": "Sagittarius", "mr": "धनु",     "hi": "धनु"     }, "lagna": { "en": "Taurus",      "mr": "वृषभ",    "hi": "वृषभ"    }, "content": null },
+    "9_3":  { "code": "H.9.03",  "rashi": { "en": "Sagittarius", "mr": "धनु",     "hi": "धनु"     }, "lagna": { "en": "Gemini",      "mr": "मिथुन",   "hi": "मिथुन"   }, "content": null },
+    "9_4":  { "code": "H.9.04",  "rashi": { "en": "Sagittarius", "mr": "धनु",     "hi": "धनु"     }, "lagna": { "en": "Cancer",      "mr": "कर्क",    "hi": "कर्क"    }, "content": null },
+    "9_5":  { "code": "H.9.05",  "rashi": { "en": "Sagittarius", "mr": "धनु",     "hi": "धनु"     }, "lagna": { "en": "Leo",         "mr": "सिंह",    "hi": "सिंह"    }, "content": null },
+    "9_6":  { "code": "H.9.06",  "rashi": { "en": "Sagittarius", "mr": "धनु",     "hi": "धनु"     }, "lagna": { "en": "Virgo",       "mr": "कन्या",   "hi": "कन्या"   }, "content": null },
+    "9_7":  { "code": "H.9.07",  "rashi": { "en": "Sagittarius", "mr": "धनु",     "hi": "धनु"     }, "lagna": { "en": "Libra",       "mr": "तुळ",     "hi": "तुला"    }, "content": null },
+    "9_8":  { "code": "H.9.08",  "rashi": { "en": "Sagittarius", "mr": "धनु",     "hi": "धनु"     }, "lagna": { "en": "Scorpio",     "mr": "वृश्चिक", "hi": "वृश्चिक" }, "content": null },
+    "9_9":  { "code": "H.9.09",  "rashi": { "en": "Sagittarius", "mr": "धनु",     "hi": "धनु"     }, "lagna": { "en": "Sagittarius", "mr": "धनु",     "hi": "धनु"     }, "content": null },
+    "9_10": { "code": "H.9.10",  "rashi": { "en": "Sagittarius", "mr": "धनु",     "hi": "धनु"     }, "lagna": { "en": "Capricorn",   "mr": "मकर",     "hi": "मकर"     }, "content": null },
+    "9_11": { "code": "H.9.11",  "rashi": { "en": "Sagittarius", "mr": "धनु",     "hi": "धनु"     }, "lagna": { "en": "Aquarius",    "mr": "कुंभ",    "hi": "कुंभ"    }, "content": null },
+    "9_12": { "code": "H.9.12",  "rashi": { "en": "Sagittarius", "mr": "धनु",     "hi": "धनु"     }, "lagna": { "en": "Pisces",      "mr": "मीन",     "hi": "मीन"     }, "content": null },
+    "10_1":  { "code": "H.10.01", "rashi": { "en": "Capricorn",   "mr": "मकर",     "hi": "मकर"     }, "lagna": { "en": "Aries",       "mr": "मेष",     "hi": "मेष"     }, "content": null },
+    "10_2":  { "code": "H.10.02", "rashi": { "en": "Capricorn",   "mr": "मकर",     "hi": "मकर"     }, "lagna": { "en": "Taurus",      "mr": "वृषभ",    "hi": "वृषभ"    }, "content": null },
+    "10_3":  { "code": "H.10.03", "rashi": { "en": "Capricorn",   "mr": "मकर",     "hi": "मकर"     }, "lagna": { "en": "Gemini",      "mr": "मिथुन",   "hi": "मिथुन"   }, "content": null },
+    "10_4":  { "code": "H.10.04", "rashi": { "en": "Capricorn",   "mr": "मकर",     "hi": "मकर"     }, "lagna": { "en": "Cancer",      "mr": "कर्क",    "hi": "कर्क"    }, "content": null },
+    "10_5":  { "code": "H.10.05", "rashi": { "en": "Capricorn",   "mr": "मकर",     "hi": "मकर"     }, "lagna": { "en": "Leo",         "mr": "सिंह",    "hi": "सिंह"    }, "content": null },
+    "10_6":  { "code": "H.10.06", "rashi": { "en": "Capricorn",   "mr": "मकर",     "hi": "मकर"     }, "lagna": { "en": "Virgo",       "mr": "कन्या",   "hi": "कन्या"   }, "content": null },
+    "10_7":  { "code": "H.10.07", "rashi": { "en": "Capricorn",   "mr": "मकर",     "hi": "मकर"     }, "lagna": { "en": "Libra",       "mr": "तुळ",     "hi": "तुला"    }, "content": null },
+    "10_8":  { "code": "H.10.08", "rashi": { "en": "Capricorn",   "mr": "मकर",     "hi": "मकर"     }, "lagna": { "en": "Scorpio",     "mr": "वृश्चिक", "hi": "वृश्चिक" }, "content": null },
+    "10_9":  { "code": "H.10.09", "rashi": { "en": "Capricorn",   "mr": "मकर",     "hi": "मकर"     }, "lagna": { "en": "Sagittarius", "mr": "धनु",     "hi": "धनु"     }, "content": null },
+    "10_10": { "code": "H.10.10", "rashi": { "en": "Capricorn",   "mr": "मकर",     "hi": "मकर"     }, "lagna": { "en": "Capricorn",   "mr": "मकर",     "hi": "मकर"     }, "content": null },
+    "10_11": { "code": "H.10.11", "rashi": { "en": "Capricorn",   "mr": "मकर",     "hi": "मकर"     }, "lagna": { "en": "Aquarius",    "mr": "कुंभ",    "hi": "कुंभ"    }, "content": null },
+    "10_12": { "code": "H.10.12", "rashi": { "en": "Capricorn",   "mr": "मकर",     "hi": "मकर"     }, "lagna": { "en": "Pisces",      "mr": "मीन",     "hi": "मीन"     }, "content": null },
+    "11_1":  { "code": "H.11.01", "rashi": { "en": "Aquarius",    "mr": "कुंभ",    "hi": "कुंभ"    }, "lagna": { "en": "Aries",       "mr": "मेष",     "hi": "मेष"     }, "content": null },
+    "11_2":  { "code": "H.11.02", "rashi": { "en": "Aquarius",    "mr": "कुंभ",    "hi": "कुंभ"    }, "lagna": { "en": "Taurus",      "mr": "वृषभ",    "hi": "वृषभ"    }, "content": null },
+    "11_3":  { "code": "H.11.03", "rashi": { "en": "Aquarius",    "mr": "कुंभ",    "hi": "कुंभ"    }, "lagna": { "en": "Gemini",      "mr": "मिथुन",   "hi": "मिथुन"   }, "content": null },
+    "11_4":  { "code": "H.11.04", "rashi": { "en": "Aquarius",    "mr": "कुंभ",    "hi": "कुंभ"    }, "lagna": { "en": "Cancer",      "mr": "कर्क",    "hi": "कर्क"    }, "content": null },
+    "11_5":  { "code": "H.11.05", "rashi": { "en": "Aquarius",    "mr": "कुंभ",    "hi": "कुंभ"    }, "lagna": { "en": "Leo",         "mr": "सिंह",    "hi": "सिंह"    }, "content": null },
+    "11_6":  { "code": "H.11.06", "rashi": { "en": "Aquarius",    "mr": "कुंभ",    "hi": "कुंभ"    }, "lagna": { "en": "Virgo",       "mr": "कन्या",   "hi": "कन्या"   }, "content": null },
+    "11_7":  { "code": "H.11.07", "rashi": { "en": "Aquarius",    "mr": "कुंभ",    "hi": "कुंभ"    }, "lagna": { "en": "Libra",       "mr": "तुळ",     "hi": "तुला"    }, "content": null },
+    "11_8":  { "code": "H.11.08", "rashi": { "en": "Aquarius",    "mr": "कुंभ",    "hi": "कुंभ"    }, "lagna": { "en": "Scorpio",     "mr": "वृश्चिक", "hi": "वृश्चिक" }, "content": null },
+    "11_9":  { "code": "H.11.09", "rashi": { "en": "Aquarius",    "mr": "कुंभ",    "hi": "कुंभ"    }, "lagna": { "en": "Sagittarius", "mr": "धनु",     "hi": "धनु"     }, "content": null },
+    "11_10": { "code": "H.11.10", "rashi": { "en": "Aquarius",    "mr": "कुंभ",    "hi": "कुंभ"    }, "lagna": { "en": "Capricorn",   "mr": "मकर",     "hi": "मकर"     }, "content": null },
+    "11_11": { "code": "H.11.11", "rashi": { "en": "Aquarius",    "mr": "कुंभ",    "hi": "कुंभ"    }, "lagna": { "en": "Aquarius",    "mr": "कुंभ",    "hi": "कुंभ"    }, "content": null },
+    "11_12": { "code": "H.11.12", "rashi": { "en": "Aquarius",    "mr": "कुंभ",    "hi": "कुंभ"    }, "lagna": { "en": "Pisces",      "mr": "मीन",     "hi": "मीन"     }, "content": null },
+    "12_1":  { "code": "H.12.01", "rashi": { "en": "Pisces",      "mr": "मीन",     "hi": "मीन"     }, "lagna": { "en": "Aries",       "mr": "मेष",     "hi": "मेष"     }, "content": null },
+    "12_2":  { "code": "H.12.02", "rashi": { "en": "Pisces",      "mr": "मीन",     "hi": "मीन"     }, "lagna": { "en": "Taurus",      "mr": "वृषभ",    "hi": "वृषभ"    }, "content": null },
+    "12_3":  { "code": "H.12.03", "rashi": { "en": "Pisces",      "mr": "मीन",     "hi": "मीन"     }, "lagna": { "en": "Gemini",      "mr": "मिथुन",   "hi": "मिथुन"   }, "content": null },
+    "12_4":  { "code": "H.12.04", "rashi": { "en": "Pisces",      "mr": "मीन",     "hi": "मीन"     }, "lagna": { "en": "Cancer",      "mr": "कर्क",    "hi": "कर्क"    }, "content": null },
+    "12_5":  { "code": "H.12.05", "rashi": { "en": "Pisces",      "mr": "मीन",     "hi": "मीन"     }, "lagna": { "en": "Leo",         "mr": "सिंह",    "hi": "सिंह"    }, "content": null },
+    "12_6":  { "code": "H.12.06", "rashi": { "en": "Pisces",      "mr": "मीन",     "hi": "मीन"     }, "lagna": { "en": "Virgo",       "mr": "कन्या",   "hi": "कन्या"   }, "content": null },
+    "12_7":  { "code": "H.12.07", "rashi": { "en": "Pisces",      "mr": "मीन",     "hi": "मीन"     }, "lagna": { "en": "Libra",       "mr": "तुळ",     "hi": "तुला"    }, "content": null },
+    "12_8":  { "code": "H.12.08", "rashi": { "en": "Pisces",      "mr": "मीन",     "hi": "मीन"     }, "lagna": { "en": "Scorpio",     "mr": "वृश्चिक", "hi": "वृश्चिक" }, "content": null },
+    "12_9":  { "code": "H.12.09", "rashi": { "en": "Pisces",      "mr": "मीन",     "hi": "मीन"     }, "lagna": { "en": "Sagittarius", "mr": "धनु",     "hi": "धनु"     }, "content": null },
+    "12_10": { "code": "H.12.10", "rashi": { "en": "Pisces",      "mr": "मीन",     "hi": "मीन"     }, "lagna": { "en": "Capricorn",   "mr": "मकर",     "hi": "मकर"     }, "content": null },
+    "12_11": { "code": "H.12.11", "rashi": { "en": "Pisces",      "mr": "मीन",     "hi": "मीन"     }, "lagna": { "en": "Aquarius",    "mr": "कुंभ",    "hi": "कुंभ"    }, "content": null },
+    "12_12": { "code": "H.12.12", "rashi": { "en": "Pisces",      "mr": "मीन",     "hi": "मीन"     }, "lagna": { "en": "Pisces",      "mr": "मीन",     "hi": "मीन"     }, "content": null }
+  }
+}

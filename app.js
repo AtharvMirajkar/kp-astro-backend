@@ -5,16 +5,17 @@ import morgan from "morgan";
 
 import userBirthDetailRoutes from "./routes/userBirthDetailRoutes.js";
 import notificationRoutes from "./routes/notificationRoutes.js";
+import healthAstrologyRoutes from "./routes/healthAstrologyRoutes.js";
 import { notFoundHandler, globalErrorHandler } from "./middleware/errorHandler.js";
 
 const app = express();
 
 // ─── Security & Utility Middleware ────────────────────────────────────────────
 
-app.use(helmet());                         // Set secure HTTP headers
-app.use(cors());                           // Enable CORS (configure origins for production)
-app.use(morgan("dev"));                    // HTTP request logger
-app.use(express.json({ limit: "10kb" }));  // Parse JSON bodies (with size limit)
+app.use(helmet());
+app.use(cors());
+app.use(morgan("dev"));
+app.use(express.json({ limit: "10kb" }));
 app.use(express.urlencoded({ extended: true }));
 
 // ─── Health Check ─────────────────────────────────────────────────────────────
@@ -32,6 +33,7 @@ app.get("/health", (req, res) => {
 
 app.use("/api/users", userBirthDetailRoutes);
 app.use("/api/notifications", notificationRoutes);
+app.use("/api/health-astrology", healthAstrologyRoutes);
 
 // ─── Error Handlers ───────────────────────────────────────────────────────────
 
