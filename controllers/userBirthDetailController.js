@@ -15,19 +15,51 @@ const handleValidationErrors = (req, res) => {
   return null;
 };
 
-// ─── Create ──────────────────────────────────────────────────────────────────
+// ─── Create or Update (upsert by deviceId) ───────────────────────────────────
+// If a record with the same deviceId already exists, update it.
+// Otherwise, create a new record.
 
 export const createUserBirthDetail = async (req, res) => {
   const validationError = handleValidationErrors(req, res);
   if (validationError) return;
 
   try {
-    const { name, gender, deviceId, dateOfBirth, timeOfBirth, placeOfBirth } = req.body;
+    const { name, gender, deviceId, fcmToken, dateOfBirth, timeOfBirth, placeOfBirth } = req.body;
 
-    const userBirthDetail = await UserBirthDetail.create({
+    // Check if this device already has a record
+    const existing = await UserBirthDetail.findOne({ deviceId });
+
+    if (existing) {
+      // Device exists → update all fields including the (possibly refreshed) fcmToken
+      const updated = await UserBirthDetail.findOneAndUpdate(
+        { deviceId },
+        {
+          $set: {
+            name,
+            gender,
+            fcmToken,
+            dateOfBirth,
+            timeOfBirth,
+            placeOfBirth,
+          },
+        },
+        { new: true, runValidators: true }
+      );
+
+      return res.status(200).json({
+        success: true,
+        isNew: false,
+        message: "User details updated successfully (existing device)",
+        data: updated,
+      });
+    }
+
+    // New device → create fresh record
+    const created = await UserBirthDetail.create({
       name,
       gender,
       deviceId,
+      fcmToken,
       dateOfBirth,
       timeOfBirth,
       placeOfBirth,
@@ -35,8 +67,9 @@ export const createUserBirthDetail = async (req, res) => {
 
     return res.status(201).json({
       success: true,
+      isNew: true,
       message: "User birth detail created successfully",
-      data: userBirthDetail,
+      data: created,
     });
   } catch (error) {
     if (error.name === "ValidationError") {
@@ -45,6 +78,13 @@ export const createUserBirthDetail = async (req, res) => {
         message: e.message,
       }));
       return res.status(422).json({ success: false, message: "Validation failed", errors });
+    }
+    // Duplicate key on deviceId (race condition safety net)
+    if (error.code === 11000) {
+      return res.status(409).json({
+        success: false,
+        message: "A record for this device already exists. Use PUT /:id to update.",
+      });
     }
     console.error("createUserBirthDetail error:", error);
     return res.status(500).json({ success: false, message: "Internal server error" });
@@ -59,7 +99,7 @@ export const getAllUserBirthDetails = async (req, res) => {
 
     const filter = {};
     if (deviceId) filter.deviceId = deviceId;
-    if (gender) filter.gender = gender.toLowerCase();
+    if (gender)   filter.gender   = gender.toLowerCase();
 
     const skip = (Number(page) - 1) * Number(limit);
 
@@ -76,8 +116,8 @@ export const getAllUserBirthDetails = async (req, res) => {
       data: records,
       pagination: {
         total,
-        page: Number(page),
-        limit: Number(limit),
+        page:       Number(page),
+        limit:      Number(limit),
         totalPages: Math.ceil(total / Number(limit)),
       },
     });
@@ -107,7 +147,44 @@ export const getUserBirthDetailById = async (req, res) => {
   }
 };
 
-// ─── Update ──────────────────────────────────────────────────────────────────
+// ─── Update FCM Token only (called when RN app refreshes its token) ──────────
+
+export const updateFcmToken = async (req, res) => {
+  const { deviceId, fcmToken } = req.body;
+
+  if (!deviceId || !fcmToken) {
+    return res.status(422).json({
+      success: false,
+      message: "Both deviceId and fcmToken are required",
+    });
+  }
+
+  try {
+    const record = await UserBirthDetail.findOneAndUpdate(
+      { deviceId },
+      { $set: { fcmToken } },
+      { new: true }
+    );
+
+    if (!record) {
+      return res.status(404).json({
+        success: false,
+        message: "No user found for this deviceId",
+      });
+    }
+
+    return res.status(200).json({
+      success: true,
+      message: "FCM token updated successfully",
+      data: { deviceId: record.deviceId, fcmToken: record.fcmToken },
+    });
+  } catch (error) {
+    console.error("updateFcmToken error:", error);
+    return res.status(500).json({ success: false, message: "Internal server error" });
+  }
+};
+
+// ─── Update (general) ────────────────────────────────────────────────────────
 
 export const updateUserBirthDetail = async (req, res) => {
   const validationError = handleValidationErrors(req, res);

@@ -1,4 +1,4 @@
-import { body, param, query } from "express-validator";
+import { body, param } from "express-validator";
 
 // ─── User Birth Detail Validators ────────────────────────────────────────────
 
@@ -17,6 +17,10 @@ export const createUserBirthDetailRules = [
   body("deviceId")
     .trim()
     .notEmpty().withMessage("Device ID is required"),
+
+  body("fcmToken")
+    .trim()
+    .notEmpty().withMessage("FCM token is required"),
 
   body("dateOfBirth")
     .notEmpty().withMessage("Date of birth is required")
@@ -57,6 +61,11 @@ export const updateUserBirthDetailRules = [
     .trim()
     .notEmpty().withMessage("Device ID cannot be empty"),
 
+  body("fcmToken")
+    .optional()
+    .trim()
+    .notEmpty().withMessage("FCM token cannot be empty"),
+
   body("dateOfBirth")
     .optional()
     .isISO8601().withMessage("Date of birth must be a valid ISO 8601 date")
@@ -87,8 +96,9 @@ const VALID_ASTRO_TYPES = [
   "festival_muhurat", "custom",
 ];
 
+// Send to a single device — now accepts fcmToken directly
 export const sendToDeviceRules = [
-  body("deviceId").trim().notEmpty().withMessage("Device ID (FCM token) is required"),
+  body("fcmToken").trim().notEmpty().withMessage("fcmToken is required"),
   body("type")
     .trim()
     .notEmpty().withMessage("Notification type is required")
