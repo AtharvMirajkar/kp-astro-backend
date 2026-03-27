@@ -14,8 +14,7 @@ const userBirthDetailSchema = new mongoose.Schema(
       required: [true, "Gender is required"],
       enum: {
         values: ["male", "female", "other", "prefer_not_to_say"],
-        message:
-          "{VALUE} is not a valid gender. Use: male, female, other, prefer_not_to_say",
+        message: "{VALUE} is not a valid gender. Use: male, female, other, prefer_not_to_say",
       },
       lowercase: true,
     },
@@ -23,7 +22,7 @@ const userBirthDetailSchema = new mongoose.Schema(
       type: String,
       required: [true, "Device ID is required"],
       trim: true,
-      unique: true, // one record per physical device
+      unique: true,   // one record per physical device
     },
     fcmToken: {
       type: String,
@@ -58,15 +57,12 @@ const userBirthDetailSchema = new mongoose.Schema(
   {
     timestamps: true,
     versionKey: false,
-  },
+  }
 );
 
 // Index on fcmToken for fast notification lookups
-userBirthDetailSchema.index({ deviceId: 1, fcmToken: 1, createdAt: -1 });
+userBirthDetailSchema.index({ fcmToken: 1 });
 
-const UserBirthDetail = mongoose.model(
-  "UserBirthDetail",
-  userBirthDetailSchema,
-);
+const UserBirthDetail = mongoose.model("UserBirthDetail", userBirthDetailSchema);
 
 export default UserBirthDetail;

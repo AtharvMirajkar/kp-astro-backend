@@ -2,6 +2,7 @@ import "dotenv/config";
 import app from "./app.js";
 import connectDB from "./config/db.js";
 import { initializeFirebase } from "./config/firebase.js";
+import { registerHoroscopeCronJob } from "./jobs/horoscopeCronJob.js";
 
 const PORT = process.env.PORT || 3000;
 
@@ -12,10 +13,14 @@ const startServer = async () => {
   // 2. Initialize Firebase Admin SDK
   initializeFirebase();
 
-  // 3. Start Express server
+  // 3. Register daily horoscope cron job (runs at 06:00 AM IST every day)
+  registerHoroscopeCronJob();
+
+  // 4. Start Express server
   const server = app.listen(PORT, () => {
     console.log(`🚀 Server running in ${process.env.NODE_ENV} mode on port ${PORT}`);
-    console.log(`📡 Health check: http://localhost:${PORT}/health`);
+    console.log(`📡 Health check : http://localhost:${PORT}/health`);
+    console.log(`🔭 Horoscope API: http://localhost:${PORT}/api/horoscope/:sign`);
   });
 
   // ─── Graceful Shutdown ─────────────────────────────────────────────────────
@@ -29,9 +34,7 @@ const startServer = async () => {
   };
 
   process.on("SIGTERM", () => shutdown("SIGTERM"));
-  process.on("SIGINT", () => shutdown("SIGINT"));
-
-  // ─── Unhandled Rejections ──────────────────────────────────────────────────
+  process.on("SIGINT",  () => shutdown("SIGINT"));
 
   process.on("unhandledRejection", (reason) => {
     console.error("❌ Unhandled Rejection:", reason);

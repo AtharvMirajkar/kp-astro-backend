@@ -26,8 +26,8 @@ router.get("/types", getNotificationTypes);
  * @route   POST /api/notifications/send
  * @desc    Send an astrology push notification to a specific device (FCM token).
  *          title & body are optional — defaults come from the type's template.
- * @body    { deviceId, type, title?, body?, data? }
- * @example { "deviceId": "fcm-token-xyz", "type": "daily_horoscope" }
+ * @body    { fcmToken, type, title?, body?, data? }
+ * @example { "fcmToken": "fcm-token-xyz", "type": "daily_horoscope" }
  * @access  Public
  */
 router.post("/send", sendToDeviceRules, sendAstroNotificationToDevice);
