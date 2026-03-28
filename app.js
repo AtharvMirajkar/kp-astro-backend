@@ -7,6 +7,7 @@ import userBirthDetailRoutes   from "./routes/userBirthDetailRoutes.js";
 import notificationRoutes      from "./routes/notificationRoutes.js";
 import healthAstrologyRoutes   from "./routes/healthAstrologyRoutes.js";
 import dailyHoroscopeRoutes    from "./routes/dailyHoroscopeRoutes.js";
+import adminAuthRoutes         from "./routes/adminAuthRoutes.js";
 import { notFoundHandler, globalErrorHandler } from "./middleware/errorHandler.js";
 
 const app = express();
@@ -36,6 +37,7 @@ app.use("/api/users",            userBirthDetailRoutes);
 app.use("/api/notifications",    notificationRoutes);
 app.use("/api/health-astrology", healthAstrologyRoutes);
 app.use("/api/horoscope",        dailyHoroscopeRoutes);
+app.use("/api/admin/auth",       adminAuthRoutes);
 
 // ─── Error Handlers ───────────────────────────────────────────────────────────
 
