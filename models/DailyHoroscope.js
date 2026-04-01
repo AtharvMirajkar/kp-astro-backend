@@ -1,59 +1,51 @@
 import mongoose from "mongoose";
 
+// Each field stored in 3 languages
+const triLang = { en: { type: String, default: "" }, hi: { type: String, default: "" }, mr: { type: String, default: "" } };
+
+const ratingsSchema = new mongoose.Schema({
+  health:      triLang,
+  wealth:      triLang,
+  family:      triLang,
+  loveMatters: triLang,
+  occupation:  triLang,
+  marriedLife: triLang,
+}, { _id: false });
+
 const dailyHoroscopeSchema = new mongoose.Schema(
   {
-    // Zodiac sign key — primary lookup field
-    sign: {
-      type: String,
-      required: true,
-      lowercase: true,
-      trim: true,
-      enum: [
-        "aries", "taurus", "gemini", "cancer", "leo", "virgo",
-        "libra", "scorpio", "sagittarius", "capricorn", "aquarius", "pisces",
-      ],
-    },
-
-    // Midnight UTC date this record belongs to
+    sign:       { type: String, required: true, lowercase: true, trim: true,
+                  enum: ["aries","taurus","gemini","cancer","leo","virgo",
+                         "libra","scorpio","sagittarius","capricorn","aquarius","pisces"] },
     date:       { type: Date,   required: true },
-    dateString: { type: String, required: true }, // "YYYY-MM-DD" for display
+    dateString: { type: String, required: true },
 
-    // ── Main horoscope text (single combined paragraph from AstroSage) ───────
-    // AstroSage does NOT have separate love/career/finance/health sections.
-    // The full prediction is one (sometimes two) paragraph(s).
-    prediction: { type: String, default: "" },
+    // ── All major fields in 3 languages ──────────────────────────────────────
+    prediction:  { type: Object, default: () => ({ en:"", hi:"", mr:"" }) },
+    luckyNumber: { type: Object, default: () => ({ en:"", hi:"", mr:"" }) },
+    luckyColor:  { type: Object, default: () => ({ en:"", hi:"", mr:"" }) },
+    remedy:      { type: Object, default: () => ({ en:"", hi:"", mr:"" }) },
 
-    // ── Highlights (confirmed present on every AstroSage sign page) ──────────
-    luckyNumber: { type: String, default: "" },
-    luckyColor:  { type: String, default: "" },
-    remedy:      { type: String, default: "" },
+    // Each rating category also in 3 languages
+    ratings: { type: ratingsSchema, default: () => ({}) },
 
-    // ── Today's Ratings (confirmed 6 categories, each X/5 star format) ───────
-    // Stored as "3/5", "5/5" etc. Empty string if not found.
-    ratings: {
-      health:      { type: String, default: "" },
-      wealth:      { type: String, default: "" },
-      family:      { type: String, default: "" },
-      loveMatters: { type: String, default: "" },
-      occupation:  { type: String, default: "" },
-      marriedLife: { type: String, default: "" },
+    // ── Scrape status ─────────────────────────────────────────────────────────
+    scraped: {
+      en: { type: Boolean, default: false },
+      hi: { type: Boolean, default: false },
+      mr: { type: Boolean, default: false },
     },
 
-    // ── Metadata ──────────────────────────────────────────────────────────────
+    // ── Metadata ────────────────────────────────────────────────────────────────
     author:      { type: String, default: "Punit Pandey" },
-    updatedDate: { type: String, default: "" }, // as shown on the page
+    updatedDate: { type: String, default: "" },
     sourceUrl:   { type: String, default: "" },
   },
-  {
-    timestamps: true,
-    versionKey: false,
-  }
+  { timestamps: true, versionKey: false }
 );
 
-// Unique: one record per sign per day
 dailyHoroscopeSchema.index({ sign: 1, date: 1 }, { unique: true });
 dailyHoroscopeSchema.index({ dateString: 1 });
 
 const DailyHoroscope = mongoose.model("DailyHoroscope", dailyHoroscopeSchema);
-
 export default DailyHoroscope;
