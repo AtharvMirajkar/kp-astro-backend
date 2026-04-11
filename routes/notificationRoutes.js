@@ -11,52 +11,70 @@ import {
   sendToUserRules,
   broadcastRules,
 } from "../middleware/validators.js";
+import { protect, requirePermission } from "../middleware/authMiddleware.js";
 
 const router = Router();
 
+// ─── PUBLIC ───────────────────────────────────────────────────────────────────
+
 /**
- * @route   GET /api/notifications/types
- * @desc    List all supported astrology notification types with default templates
- *          and the React Native screen each type navigates to.
- * @access  Public
+ * GET /api/notifications/types
+ * List all supported astrology notification types.
+ * Public — used by the admin panel dropdown, no auth needed.
  */
 router.get("/types", getNotificationTypes);
 
-/**
- * @route   POST /api/notifications/send
- * @desc    Send an astrology push notification to a specific device (FCM token).
- *          title & body are optional — defaults come from the type's template.
- * @body    { fcmToken, type, title?, body?, data? }
- * @example { "fcmToken": "fcm-token-xyz", "type": "daily_horoscope" }
- * @access  Public
- */
-router.post("/send", sendToDeviceRules, sendAstroNotificationToDevice);
+// ─── PROTECTED — require login + manageNotifications permission ───────────────
 
 /**
- * @route   POST /api/notifications/send-to-user
- * @desc    Send a personalised astrology notification to a user by MongoDB ID.
- *          The user's name is automatically prepended to the body.
- * @body    { userId, type, title?, body?, data? }
- * @access  Public
+ * POST /api/notifications/send
+ * Send to a specific device by FCM token.
+ * @body { fcmToken, type, title?, body?, data? }
  */
-router.post("/send-to-user", sendToUserRules, sendAstroNotificationToUser);
+router.post(
+  "/send",
+  protect,
+  requirePermission("manageNotifications"),
+  sendToDeviceRules,
+  sendAstroNotificationToDevice
+);
 
 /**
- * @route   POST /api/notifications/broadcast
- * @desc    Broadcast an astrology notification to ALL registered devices.
- *          Auto-chunks requests to respect FCM's 500-token limit.
- * @body    { type, title?, body?, data? }
- * @access  Public
+ * POST /api/notifications/send-to-user
+ * Send personalised notification to a user by their MongoDB ID.
+ * @body { userId, type, title?, body?, data? }
  */
-router.post("/broadcast", broadcastRules, broadcastAstroNotification);
+router.post(
+  "/send-to-user",
+  protect,
+  requirePermission("manageNotifications"),
+  sendToUserRules,
+  sendAstroNotificationToUser
+);
 
 /**
- * @route   POST /api/notifications/daily-horoscope
- * @desc    Send the daily horoscope to every registered user.
- *          Designed to be triggered by a cron job each morning.
- *          No body required — uses the built-in daily_horoscope template.
- * @access  Public
+ * POST /api/notifications/broadcast
+ * Broadcast to ALL registered FCM tokens.
+ * @body { type, title?, body?, data? }
  */
-router.post("/daily-horoscope", sendDailyHoroscopeToAll);
+router.post(
+  "/broadcast",
+  protect,
+  requirePermission("manageNotifications"),
+  broadcastRules,
+  broadcastAstroNotification
+);
+
+/**
+ * POST /api/notifications/daily-horoscope
+ * Trigger the daily horoscope blast manually (also fires via cron at 6 AM IST).
+ * Superadmin or anyone with manageNotifications permission.
+ */
+router.post(
+  "/daily-horoscope",
+  protect,
+  requirePermission("manageNotifications"),
+  sendDailyHoroscopeToAll
+);
 
 export default router;

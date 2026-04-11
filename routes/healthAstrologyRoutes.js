@@ -7,6 +7,7 @@ import {
   seedHealthData,
   upsertHealthReading,
 } from "../controllers/healthAstrologyController.js";
+import { protect, requirePermission } from "../middleware/authMiddleware.js";
 
 const router = Router();
 
@@ -14,21 +15,13 @@ const VALID_SIGNS_EN = [
   "aries","taurus","gemini","cancer","leo","virgo",
   "libra","scorpio","sagittarius","capricorn","aquarius","pisces",
 ];
-const VALID_LANGS = ["en", "hi", "mr"];
-
-// ─── Validation rules ─────────────────────────────────────────────────────────
+const VALID_LANGS = ["en","hi","mr"];
 
 const healthReadingQueryRules = [
-  query("rashi")
-    .notEmpty().withMessage("rashi (Moon Sign) is required")
-    .trim(),
-  query("lagna")
-    .notEmpty().withMessage("lagna (Ascendant) is required")
-    .trim(),
-  query("language")
-    .optional()
-    .isIn(VALID_LANGS)
-    .withMessage(`language must be one of: ${VALID_LANGS.join(", ")}`),
+  query("rashi").notEmpty().withMessage("rashi (Moon Sign) is required").trim(),
+  query("lagna").notEmpty().withMessage("lagna (Ascendant) is required").trim(),
+  query("language").optional()
+    .isIn(VALID_LANGS).withMessage(`language must be one of: ${VALID_LANGS.join(", ")}`),
 ];
 
 const upsertRules = [
@@ -38,63 +31,51 @@ const upsertRules = [
   body("content.en").notEmpty().withMessage("content.en (English text) is required"),
 ];
 
-// ─── Routes ───────────────────────────────────────────────────────────────────
+// ─── PUBLIC — React Native app reads these ────────────────────────────────────
 
 /**
- * @route   GET /api/health-astrology/reading
- * @desc    Get health reading for a specific rashi + lagna combination.
- *          Accepts sign names in English, Hindi (Devanagari), or Marathi.
- *          Returns the "working on it" message if data is not yet available.
- * @query   rashi, lagna, language (en | hi | mr)
- * @example GET /api/health-astrology/reading?rashi=aquarius&lagna=scorpio&language=en
- * @example GET /api/health-astrology/reading?rashi=कुंभ&lagna=वृश्चिक&language=mr
- * @access  Public
+ * GET /api/health-astrology/reading?rashi=aquarius&lagna=scorpio&language=en
+ * Also accepts POST with { rashi, lagna, language } in body (easier from RN with Unicode).
  */
 router.get("/reading", healthReadingQueryRules, getHealthReading);
-
-/**
- * @route   POST /api/health-astrology/reading
- * @desc    Same as GET /reading but accepts rashi, lagna, language in the JSON body.
- *          Useful for React Native when passing complex Unicode params is tricky.
- * @body    { rashi, lagna, language }
- * @access  Public
- */
 router.post("/reading", getHealthReading);
 
 /**
- * @route   GET /api/health-astrology/combinations
- * @desc    List all available (published) rashi + lagna combinations.
- *          Useful for building dropdowns in the frontend.
- * @query   language (en | hi | mr)
- * @access  Public
+ * GET /api/health-astrology/combinations?language=mr
+ * All available rashi+lagna combinations — for building dropdowns.
  */
 router.get("/combinations", getAvailableCombinations);
 
 /**
- * @route   GET /api/health-astrology/rashi/:rashi
- * @desc    Get all 12 lagna readings for a given rashi.
- * @param   rashi — sign name in English or Devanagari
- * @query   language (en | hi | mr)
- * @example GET /api/health-astrology/rashi/aries?language=hi
- * @access  Public
+ * GET /api/health-astrology/rashi/:rashi?language=hi
+ * All 12 lagna readings for a given rashi.
  */
 router.get("/rashi/:rashi", getReadingsByRashi);
 
-/**
- * @route   POST /api/health-astrology/seed
- * @desc    Seed the MongoDB collection from the local JSON data file.
- *          Safe to call multiple times — skips already-existing codes.
- *          Restrict this endpoint in production (add admin auth middleware).
- * @access  Admin
- */
-router.post("/seed", seedHealthData);
+// ─── PROTECTED — Admin panel only ─────────────────────────────────────────────
 
 /**
- * @route   POST /api/health-astrology/upsert
- * @desc    Add or update a single health reading (admin use).
- * @body    { code, rashi: {en,hi,mr}, lagna: {en,hi,mr}, content: {en,hi,mr}, isPublished? }
- * @access  Admin
+ * POST /api/health-astrology/seed
+ * Load JSON data file into MongoDB. Safe to run multiple times (skips existing).
  */
-router.post("/upsert", upsertRules, upsertHealthReading);
+router.post(
+  "/seed",
+  protect,
+  requirePermission("manageHealthData"),
+  seedHealthData
+);
+
+/**
+ * POST /api/health-astrology/upsert
+ * Add or update a single health reading (trilingual).
+ * @body { code, rashi:{en,hi,mr}, lagna:{en,hi,mr}, content:{en,hi,mr}, isPublished? }
+ */
+router.post(
+  "/upsert",
+  protect,
+  requirePermission("manageHealthData"),
+  upsertRules,
+  upsertHealthReading
+);
 
 export default router;

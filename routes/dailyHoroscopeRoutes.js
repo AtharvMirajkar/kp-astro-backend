@@ -9,21 +9,22 @@ import {
   getScrapeCoverage,
   getSupportedSigns,
 } from "../controllers/dailyHoroscopeController.js";
+import { protect, requirePermission } from "../middleware/authMiddleware.js";
 
 const router = Router();
 
 const VALID_SIGNS = [
-  "aries", "taurus", "gemini", "cancer", "leo", "virgo",
-  "libra", "scorpio", "sagittarius", "capricorn", "aquarius", "pisces",
+  "aries","taurus","gemini","cancer","leo","virgo",
+  "libra","scorpio","sagittarius","capricorn","aquarius","pisces",
 ];
-const VALID_LANGS = ["en", "hi", "mr"];
+const VALID_LANGS = ["en","hi","mr"];
 
 const signParamRule = param("sign")
   .toLowerCase()
   .isIn(VALID_SIGNS)
   .withMessage(`sign must be one of: ${VALID_SIGNS.join(", ")}`);
 
-const langQueryRule = query(["language", "lang"])
+const langQueryRule = query(["language","lang"])
   .optional()
   .isIn(VALID_LANGS)
   .withMessage(`language must be one of: ${VALID_LANGS.join(", ")}`);
@@ -33,71 +34,55 @@ const dateQueryRule = query("date")
   .matches(/^\d{4}-\d{2}-\d{2}$/)
   .withMessage("date must be in YYYY-MM-DD format");
 
-// ─── Public read endpoints ────────────────────────────────────────────────────
+// ─── PUBLIC — React Native app reads these ────────────────────────────────────
 
-/**
- * @route   GET /api/horoscope/signs
- * @desc    List all 12 supported signs and supported languages
- */
+/** GET /api/horoscope/signs */
 router.get("/signs", getSupportedSigns);
 
-/**
- * @route   GET /api/horoscope/coverage
- * @desc    Show which signs have been scraped per language for a given date
- * @query   date? — YYYY-MM-DD (defaults to today)
- * @example GET /api/horoscope/coverage
- */
-router.get("/coverage", dateQueryRule, getScrapeCoverage);
-
-/**
- * @route   GET /api/horoscope/today
- * @desc    Get today's horoscope for ALL 12 signs in the requested language
- * @query   language? — en | hi | mr (default: en)
- * @query   date?     — YYYY-MM-DD (default: today)
- * @example GET /api/horoscope/today?language=mr
- */
+/** GET /api/horoscope/today?language=mr */
 router.get("/today", [langQueryRule, dateQueryRule], getAllSignsHoroscope);
 
-/**
- * @route   GET /api/horoscope/:sign
- * @desc    Get daily horoscope for one sign in the requested language
- * @param   sign     — e.g. "aquarius", "scorpio"
- * @query   language — en | hi | mr (default: en)
- * @query   date?    — YYYY-MM-DD (default: today)
- * @example GET /api/horoscope/aquarius?language=hi
- * @example GET /api/horoscope/scorpio?language=mr&date=2026-03-27
- */
+/** GET /api/horoscope/:sign?language=hi&date=2026-04-01 */
 router.get("/:sign", [signParamRule, langQueryRule, dateQueryRule], getDailyHoroscope);
 
-/**
- * @route   GET /api/horoscope/:sign/history
- * @desc    Get past N days of horoscope for a sign in the requested language
- * @query   language — en | hi | mr (default: en)
- * @query   days?    — number of days (default: 7, max: 30)
- * @example GET /api/horoscope/aries/history?language=hi&days=14
- */
+/** GET /api/horoscope/:sign/history?language=mr&days=7 */
 router.get("/:sign/history", [signParamRule, langQueryRule, dateQueryRule], getHoroscopeHistory);
 
-// ─── Admin / scrape endpoints ─────────────────────────────────────────────────
+// ─── PROTECTED — Admin panel only ─────────────────────────────────────────────
 
 /**
- * @route   POST /api/horoscope/scrape/all
- * @desc    Scrape all 12 signs × all 3 languages (EN, HI, MR) for today
- *          Called by cron job at 06:00 AM IST. Can also be triggered manually.
- *          Takes ~3-4 minutes (36 HTTP requests with polite delays).
- * @access  Admin
+ * GET /api/horoscope/coverage?date=2026-04-01
+ * Shows scrape status per language. Admin panel dashboard use.
  */
-router.post("/scrape/all", scrapeAndSaveAllSigns);
+router.get(
+  "/coverage",
+  protect,
+  requirePermission("manageHoroscope"),
+  dateQueryRule,
+  getScrapeCoverage
+);
 
 /**
- * @route   POST /api/horoscope/scrape/:sign
- * @desc    Scrape a single sign in all 3 languages (or one specific language)
- * @param   sign   — zodiac sign
- * @query   lang?  — en | hi | mr — if set, re-scrapes only that language
- * @example POST /api/horoscope/scrape/aquarius
- * @example POST /api/horoscope/scrape/aquarius?lang=mr
- * @access  Admin
+ * POST /api/horoscope/scrape/all
+ * Scrape all 12 signs × 3 languages. Triggered by cron or manually.
  */
-router.post("/scrape/:sign", signParamRule, scrapeAndSaveSingleSign);
+router.post(
+  "/scrape/all",
+  protect,
+  requirePermission("manageHoroscope"),
+  scrapeAndSaveAllSigns
+);
+
+/**
+ * POST /api/horoscope/scrape/:sign?lang=mr
+ * Re-scrape a single sign (all langs or specific lang).
+ */
+router.post(
+  "/scrape/:sign",
+  protect,
+  requirePermission("manageHoroscope"),
+  signParamRule,
+  scrapeAndSaveSingleSign
+);
 
 export default router;
